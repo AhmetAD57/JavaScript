@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <title>Document</title>
+
+    <style>
+        .highlight{
+            background-color: yellow;
+            
+        }
+
+        .green{
+            background-color: green;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    
+   
+    <h1>Deneme</h1>
+    
+    <ul>
+        <li>Deneme1</li>
+        <li>Deneme2</li>
+        <li>Deneme3</li>
+    </ul>
+
+    <img src="https://cdn.motor1.com/images/mgl/jpGne/s1/gordon-murray-automotive-t-50-cropped-lead.jpg" width="200" alt="">
+
+    <input id="ad" type="text" placeholder="Adınız"/>
+    <input id="soyad" type="text"  class="green" placeholder="Soyadınız"/>
+    <button id="btnKayde" onclick="adsoyad();">Kaydet</button>
+    
+    <script>
+    
+    console.log($("h1").text());
+    console.log($("ul li").text());
+    $("h1").text("Deneme4");
+
+    console.log($("input").val());
+    $("input").val("Deneme5");
+    
+    $("img").attr("width","400");
+    
+    function adsoyad(){
+        var ad=$("#ad").val();
+        var soyad=$("#soyad").val();
+        
+        console.log('Adınız ve soyadınız: '+ ad+" "+ soyad);
+    
+        $("#ad").toggleClass("highlight");
+        //$("#ad").addClass("highlight");
+        $("#soyad").removeClass("green");
+    }
+    
+    </script>
+
+</body>
+</html>

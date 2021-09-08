@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="">link</a>
+    <h3 id="header">Deneme</h3>
+    <ul id="liste">
+        <li class="item">Deneme1</li>
+        <li>Deneme2 <a href="">link</a></li>
+        <li class="item">Deneme3</li>
+    </ul>
+
+    <script>
+       
+       document.getElementById('header').style.color='red';
+
+       $("#header").css("color", "blue");
+       
+       $("#liste a").css("text-decoration", "none");
+
+       var style={
+           color:"yellow",
+           fontSize:"20px",
+           border:"1px solid red" 
+       }
+
+       $("ul li").css(style);
+
+       var listeler=document.querySelectorAll('li');
+
+       for(var i=0; i<listeler.length; i++)
+       listeler[i].style.color="red";
+
+       $("a").css({
+            color:"yellow",
+            fontSize:"20px",
+            border:"1px solid red" 
+        }); 
+        
+        $(".item").css({
+            display:"none"
+        }); 
+
+    </script>
+
+</body>
+</html>

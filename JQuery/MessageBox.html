@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <title>Document</title>
+
+<style>
+    
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    #message-box{
+        background-color: green;
+        text-align: center;
+        color: white;
+    }
+
+    #header{
+        cursor: pointer;
+        height: 25px;
+        padding: 10px;
+        border-bottom:1px solid #fff ;
+    }
+
+    #content{
+        height: 200px;
+        padding: 10px;
+        display: none;
+    }
+
+    #close{
+        cursor: pointer;
+        float: right;
+    }
+
+    #close:hover{
+        color: black;
+    }
+
+</style>
+
+<script>
+    
+    $(function(){
+        $("#header").click(function(){
+            $("#content").toggle("slow");
+        });
+
+        $("#close").click(function(){
+            $("#message-box").hide("slow");
+        });
+    });
+
+</script>  
+
+</head>
+<body>
+
+    <div id="message-box">
+        <div id="header">
+            Mesajınız Var <span id="close">X</span>
+        </div>
+        <div id="content"></div>
+    </div>
+
+
+   
+    
+    
+       
+</body>
+</html>
