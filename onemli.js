@@ -27,3 +27,12 @@ console.log("Arr Copy: "+ ArrCopy);
 Arr.push("Mouse");
 console.log("Arr : "+ Arr);
 console.log("x : "+ x);
+
+
+
+//Dizideki tekrarlı karakterleri kaldırma
+ [...new Set(nums)];
+
+ //aranan harfin olup olmasığının sorgulama
+
+ console.log("cat".includes("a"));
