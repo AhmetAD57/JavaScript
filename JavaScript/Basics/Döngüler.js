@@ -94,8 +94,9 @@ for (let i of cars) {
 
 //Foreach
 //Object
-cars.forEach(function (item) {
-  console.log(item);
+//ForEach bir higher oder bir fonksiyondur.
+cars.forEach(function (item, index) {
+  console.log(item, index);
 });
 
 people.forEach(function (item) {

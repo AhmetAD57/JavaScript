@@ -18,6 +18,28 @@ Deneme1
 
 console.clear();
 
+//Veri tipleri
+
+//Primitive
+//Number, String, Boolean, Undefined, Null
+
+let age =30;
+let newAge =age;
+age = 35;
+
+console.log(age, newAge); //newAge değişmez. Veriler direk değişkene atanır.
+
+//Non primitive(Referans tip)
+//Object, Array, Function
+
+let arr =["Cat", "Dog", "Lion"];
+let newArr = arr;
+arr.push("Fish");
+
+console.log(arr, newArr); //newArr değişir. Değişkenlere verilerin adresleri atanır. Değişkenler arası atama durumunda atanan adresdir ve herangi birindeki değişim diğerinide değiştirir.
+
+
+
 //Değişkenler
 
 var age;

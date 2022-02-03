@@ -72,3 +72,10 @@ console.log(typeof names);
 
 console.log(years);
 console.log(mix);
+
+
+let colors = ["Pink", "Orange", "White"];
+
+console.log(colors instanceof Object); //True;
+console.log(colors instanceof Array); //True;
+console.log(colors instanceof Function); //False;

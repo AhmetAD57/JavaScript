@@ -155,9 +155,7 @@ for (let i = 0; i < 10; i++) {
 
 console.log(i);
 
-
 //ES6 Arrow functions
-
 
 let hello1 = () => console.log("hi 1"); //Tek satır için paranteze gerek yok
 hello1();
@@ -169,7 +167,7 @@ let hello2 = () => {
 console.log(hello2());
 
 //Parametre almadığı belirtiliyor
-let hello3 = _ => {
+let hello3 = (_) => {
     return "hi 3";
 };
 console.log(hello3());
@@ -180,7 +178,7 @@ let plus = (x, y) => {
 plus(5, 2);
 
 //Tek parametre için paranteze gerek yok
-let printX = x => {
+let printX = (x) => {
     console.log(x);
 };
 printX(5);
@@ -188,11 +186,11 @@ printX(5);
 //return kullanmak için parantez olması gerekli
 let multiply = (x, y) => {
     return x * y;
-}; 
+};
 console.log(multiply(5, 2));
 
 //return ve süslü parantez olmadan sonucu return edebliliyor
-let multiply1 = (x, y) => x * y; 
+let multiply1 = (x, y) => x * y;
 console.log(multiply1(5, 3));
 
 let object = (id, name) => ({
@@ -234,3 +232,45 @@ const usera = () => {
 };
 
 usera();
+
+//Callback ve higher order functions
+
+//Bir fonksiyona başkabir fonksiyonu parametre olarak verilmesidir.
+
+let val;
+
+function Multiplebytwo(a, b, c, callback) {
+    var ary = [];
+    for (var i = 0; i < 3; i++) ary[i] = callback(arguments[i] * 2); //Fonksiyonun signature larını alır
+    return ary;
+}
+
+//callback function
+function addone(a) {
+    return a + 1;
+}
+
+//val= Multiplebytwo(5, 10, 20, addone);
+
+//Higher order function: Parametre olarak fonksiyon alan ve/veya fonksiyon döndüren fonksiyonlardır.
+val = Multiplebytwo(5, 10, 20, addone);
+
+// val = Multiplebytwo(5, 10, 20, function (a) {
+//     return a + 1;
+// });
+
+console.log(val);
+
+//first class function
+const foo = function () {
+    console.log("foobar");
+};
+foo();
+
+//Map
+
+const nums = [1, 2, 3, 4, 5, 6];
+nums.push(7); //Adres değeri değişmediği için nums const olsabile ekleme yapar.
+const newNums = nums.map((num) => {
+    return num * 2;
+});
