@@ -92,7 +92,7 @@ for (let i of cars) {
 }
 
 
-//Foreach
+//Foreach(Arrya helper method)
 //Object
 //ForEach bir higher oder bir fonksiyondur.
 cars.forEach(function (item, index) {

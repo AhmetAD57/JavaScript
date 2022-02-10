@@ -267,10 +267,71 @@ const foo = function () {
 };
 foo();
 
+//Array helpers
+//Geriye kopya döndürür ana yapıyı bozmas
+
 //Map
+//İstenilen özelliklerde yeni bir array döndürür.
 
 const nums = [1, 2, 3, 4, 5, 6];
 nums.push(7); //Adres değeri değişmediği için nums const olsabile ekleme yapar.
 const newNums = nums.map((num) => {
     return num * 2;
 });
+
+//Filter
+// İstenilen özelliklere göre filtreleme yaparak geriye döndürür.
+const cars = [
+    { id: 1, test: "a" },
+    { id: 2, test: "b" },
+    { id: 3, test: "a" },
+];
+
+let aCars = cars.filter((car) => car.test === "a");
+
+//Find
+//Eşleşen ilk elemanı geri döndürür.
+let car = cars.find((car) => car.id === 1);
+
+//Ever
+//Tüm elemanlar koşulu sağlıyorsa ture sağlamıyorsa false döndürür
+let result = cars.every((car) => car.id > 1);
+
+//Some
+//Bir eleman bile koşulu sağlıyorsa ture döndürür.
+let result = cars.some((car) => car.id > 1);
+
+//Reduce
+// Initail value ya göre istenilen özelliklerle prev value ile initial value yu işleme katar ve prev valuya atat(Indirger, azaltır)
+let arr = [1, 2, 3, 4, 5];
+                        //prew, currVal, currIndex
+const result = arr.reduce((sum, curr, index) => {
+    return sum = sum + curr;
+}, 0/*initial value*/);
+
+//Map with reduce
+const newArrMap = arr.reduce((prevArr, currNum) => {
+    prevArr.push(currNum * 2);
+    return prevArr;
+}, [])
+
+//Filter with reduce
+const newArrFilter = arr.reduce((prevArr, currNum) => {
+    if(currNum > 1)
+        prevArr.push(currNum * 2);
+    
+    return prevArr;
+}, [])
+
+//Find with reduce
+const newArrFind = arr.reduce((prevArr, currNum, index) => {
+    if(currNum === 1)
+        return currNum;
+    else
+        return prevArr
+}, undefined)
+
+
+//Array helper Chaining 
+
+const result = arr.filter(item => item % 2 !==0).map(item => item*item).reduce((preSum, currItem) => currItem > 10 ? preSum = preSum + currItem : preSum, 0);
