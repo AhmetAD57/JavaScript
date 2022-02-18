@@ -1,34 +1,37 @@
-// let val;
+let val;
 
-// val=window.document;
+val=window.document;
 
-// val=document.all;
-// val=document.all.length;
-// val=document.all[5];
-// val=document.head;
-// val=document.body;
-// val=document.anchors;
-// val=document.URL;
-// val=document.domain;
-// val=document.images;
-// val=document.title;
-// val=document.forms;
-// val=document.forms[0];
-// //val=document.forms[0].id;
-// //val=document.forms[0].method;
-// //val=document.forms[0].action;
-// val=document.scripts;
-// val=document.scripts[2];
-// //val=document.scripts[2].getAttribute("src");
+val=document.all;
+val=document.all.length;
+val=document.all[5];
+val=document.head;
+val=document.body;
+val=document.anchors;
+val=document.URL;
+val=document.domain;
+val=document.images;
+val=document.title;
+val=document.forms;
+val=document.forms[0];
+val=document.forms[0].id;
+val=document.forms[0].className;
+val=document.forms[0].classList;
+val=document.forms[0].method;
+val=document.forms[0].action;
+val=document.scripts;
+val=document.scripts[2];
+val=document.scripts[2].src;
+val=document.scripts[2].getAttribute("src");
 
-// console.log(val);
+console.log(val);
 
 
-//Selecting Elements
+// //Selecting Elements
 
-//Single elements
+// //Single elements
 
-//documnet.getElementById();
+// documnet.getElementById();
 
 // let val;
 
@@ -38,13 +41,13 @@
 
 // val=document.getElementById('header');
 
-// //val=val.id;
-// //val=val.className;
+// val=val.id;
+// val=val.className;
 
 // val.style.fontSize='45px';
 // val.style.color='red';
 // val.style.fontSize='bold';
-// //val.style.display='none';
+// val.style.display='none';
 
 // val=document.getElementById('header').innerText='Deneme';
 // val=document.getElementById('header').innerText='<b>Deneme</b>';
@@ -64,17 +67,17 @@
 // document.querySelector('#header').classList.add('active');
 
 
-//Multiple Elements
+// //Multiple Elements
 
-//Class Name
-//document.getElementsByClassName();
+// //Class Name
+// document.getElementsByClassName();
 
-//let val;
+// let val;
 
-//val=document.getElementsByClassName('card');
-//val=document.getElementsByClassName('card')[1];
+// val=document.getElementsByClassName('card');
+// val=document.getElementsByClassName('card')[1];
 
-//val=val[0]
+// val=val[0]
 
 // val[1].style.color='red';
 // val[1].style.fontSize='25px';
@@ -86,12 +89,12 @@
 //     console.log(val[i].textcontent='Deneme1');
 // }
 
-//document.getElementsByTagName();
+// document.getElementsByTagName();
 
 // val=document.getElementsByTagName('li');
 // val=document.getElementById('header').getElementsByTagName('ul');
 
-//document.querySelectorAll();
+// document.querySelectorAll();
 
 // val=document.querySelectorAll('div');
 
@@ -103,7 +106,7 @@
 // console.log(val);
 
 
-//Traversing to Dom
+// //Traversing to Dom
 // let val;
 
 // let list=document.querySelector('.list-group');
@@ -148,8 +151,8 @@
 //    console.log(list.childNodes[i]);
 // }
 
-//Removing Element
-//const taskList= document.querySelector('#task-list');
+// //Removing Element
+// const taskList= document.querySelector('#task-list');
 
 // taskList.remove();
 // taskList.childNodes[7].remove();
@@ -176,9 +179,9 @@
 
 // console.log(cardHeader);
 
-//console.log(taskList);
+// console.log(taskList);
 
-//Classes
+// Classes
 
 // let val;
 
@@ -202,9 +205,9 @@
 // console.log(val);
 
 
-//Creating Elements
+// //Creating Elements
 
-//create element
+// //create element
 
 // const li=document.createElement('li');
 
@@ -217,7 +220,7 @@
 // li.setAttribute('title', 'new item');
 // li.setAttribute('data-id', '5');
 
-// //text node
+// // //text node
 
 // const  text= document.createTextNode('Deneme');
 // li.appendChild(text);
@@ -241,7 +244,7 @@
 
 
 
-//Events
+// //Events
 
 // //Event Listeners
 
@@ -264,22 +267,22 @@
 //    e.preventDefault();
 // });
 
-// // btn.addEventListener('click', btnClick);
-// // btn.addEventListener('click', btnClick2);
-// // btn2.addEventListener('click', btnClick);
+// btn.addEventListener('click', btnClick);
+// btn.addEventListener('click', btnClick2);
+// btn2.addEventListener('click', btnClick);
 
-// // function btnClick()
-// // {
-// //    console.log('Deneme');
-// // }
+// function btnClick()
+// {
+//    console.log('Deneme');
+// }
 
-// // function btnClick2()
-// // {
-// //    console.log('Deneme 2');
-// // }
+// function btnClick2()
+// {
+//    console.log('Deneme 2');
+// }
 
 
-//Mause Events
+// //Mause Events
 // const btn=document.querySelector('#btnDeleteAll');
 // const ul=document.querySelector('#task-list');
 
@@ -324,7 +327,7 @@
 // }
 
 
-//Keybord Events
+// //Keybord Events
 
 // const input=document.querySelector('#xttaskName');
 // const form=document.querySelector('form');
@@ -345,14 +348,14 @@
 // {
 //    console.log(`event type: ${event.type}`);
 
-//    // console.log(`key code: ${event.keyCode}`);
-//    // console.log(`key value: ${event.target.value}`);
-//    //event.target.style.backgroundColor='yellow';
+//    console.log(`key code: ${event.keyCode}`);
+//    console.log(`key value: ${event.target.value}`);
+//    event.target.style.backgroundColor='yellow';
 
 //    event.preventDefault();
 // }
 
-//Event Bubbling
+// //Event Bubbling
 
 // const form=document.querySelector('form');
 // const cardBody=document.querySelector('.cardBody');
@@ -379,7 +382,7 @@
 //    e.stopPropagation();
 // });
 
-// //Event Capturing
+// // //Event Capturing
 
 // form.addEventListener('click', function(e){
 //    console.log('form');
@@ -420,36 +423,36 @@
 
 
 
-//Tarayıcıda bilgi saklama
-//Local Storage
-let val;
+// //Tarayıcıda bilgi saklama
+// //Local Storage
+// let val;
 
-//set item
-const firstName=localStorage.setItem('firstName', 'Deneme');
-const lastName=localStorage.setItem('lastName', 'Deneme1');
-let hobies=['sinema', 'araba', 'gezmek']
+// //set item
+// const firstName=localStorage.setItem('firstName', 'Deneme');
+// const lastName=localStorage.setItem('lastName', 'Deneme1');
+// let hobies=['sinema', 'araba', 'gezmek']
 
-//get item
-val=localStorage.getItem('firstName');
-val=localStorage.getItem('lastName');
+// //get item
+// val=localStorage.getItem('firstName');
+// val=localStorage.getItem('lastName');
 
-//remove
-//val=localStorage.removeItem('firstName');
-//val=localStorage.removeItem('lastName');
+// //remove
+// val=localStorage.removeItem('firstName');
+// val=localStorage.removeItem('lastName');
 
-//clear
-//localStorage.clear();
+// //clear
+// localStorage.clear();
 
-//set array to storage
-localStorage.setItem('hobies', JSON.stringify(hobies));
+// //set array to storage
+// localStorage.setItem('hobies', JSON.stringify(hobies));
 
-val=JSON.parse(localStorage.getItem('hobies'));
+// val=JSON.parse(localStorage.getItem('hobies'));
 
 
-console.log(val);
-console.log(localStorage);
+// console.log(val);
+// console.log(localStorage);
 
-//Session Storage
+// //Session Storage
 // const city=sessionStorage.setItem('city', 'Deneme2');
 // const country=sessionStorage.setItem('country', 'Deneme3');
 // console.log(sessionStorage);

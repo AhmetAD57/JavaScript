@@ -178,7 +178,7 @@ let plus = (x, y) => {
 plus(5, 2);
 
 //Tek parametre için paranteze gerek yok
-let printX = (x) => {
+let printX = x => {
     console.log(x);
 };
 printX(5);

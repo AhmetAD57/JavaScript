@@ -94,7 +94,7 @@ for (let i of cars) {
 
 //Foreach(Arrya helper method)
 //Object
-//ForEach bir higher oder bir fonksiyondur.
+//ForEach bir higher oder fonksiyondur.
 cars.forEach(function (item, index) {
   console.log(item, index);
 });

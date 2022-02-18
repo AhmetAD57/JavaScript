@@ -122,3 +122,30 @@ const sortedObjectsWithName = users.sort((a, b) => {
     return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
 });
 console.log(sortedObjectsWithName);
+
+
+//Arry copy and spread operator
+let copyNumArr =  Array.from(numArr);
+console.log(copyNumArr);
+
+copyNumArr = [...numArr]; //spread operator
+console.log(copyNumArr);
+
+copyNumArr = [...numArr, ...numArr]; //spread operator birden fazla kullanılabilir aynı diziyi devemına ekler , eklemek zorunlu
+console.log(copyNumArr);
+
+const name = "cat";
+
+copyNumArr = [...name]; //String bir değişken iterable(Üzrinde gezilebilir, dolaşılabilir, harf harf) olduğu için katakter karakter değerleri diziye atar
+console.log(copyNumArr);
+
+const sum = (...parameters) => {
+    let totalSum = 0;
+    parameters.forEach(value => {
+        totalSum = totalSum + value;
+    });
+
+    console.log(totalSum);
+}
+sum(1, 5, 7, 9);
+sum(1, 2, 3);
