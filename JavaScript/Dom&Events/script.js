@@ -1,3 +1,4 @@
+//Window and document object
 let val;
 
 val=window.document;
@@ -27,432 +28,423 @@ val=document.scripts[2].getAttribute("src");
 console.log(val);
 
 
-// //Selecting Elements
+//Selecting Elements
 
-// //Single elements
+//Single elements
+//documnet.getElementById();
+console.log("----------------");
+val=document.getElementById('header');
+val=document.getElementById('header').id;
+val=document.getElementById('header').className;
 
-// documnet.getElementById();
+val=document.getElementById('header');
+console.log(val);
+//val=val.id;
+//val=val.className;
 
-// let val;
+val.style.fontSize='45px';
+val.style.color='red';
+val.style.fontSize='bold';
+//val.style.display='none';
+console.log(val);
 
-// val=document.getElementById('header');
-// val=document.getElementById('header').id;
-// val=document.getElementById('header').className;
+val=document.getElementById('header').innerText='Deneme';
+val=document.getElementById('header').textContent='Deneme';
+console.log("text ", val);
 
-// val=document.getElementById('header');
+val=document.getElementById('header').innerText='<b>Deneme</b>';
+val=document.getElementById('header').innerHTML='<b>Deneme</b>';
 
-// val=val.id;
-// val=val.className;
 
-// val.style.fontSize='45px';
-// val.style.color='red';
-// val.style.fontSize='bold';
-// val.style.display='none';
+//document.querySelector();
+console.log("---------------");
+console.log(document.querySelector('#header'));
+console.log(document.querySelector('.card-header'));
+console.log(document.querySelector('div'));
+console.log(document.querySelector('div input')); //İlk bulduğunu seçer (Seçme işlemi CSS gibi)
 
-// val=document.getElementById('header').innerText='Deneme';
-// val=document.getElementById('header').innerText='<b>Deneme</b>';
-// val=document.getElementById('header').innerHTML='<b>Deneme</b>';
+document.querySelector('#header').style.color='red';
+document.querySelector('#header').textContent='Deneme';
 
-// console.log(val);
+document.querySelector('#header').className='card mt-3 mb-3';
+document.querySelector('#header').classList.add('active');
 
-// document.querySelector();
 
-// console.log(document.querySelector('#header'));
-// console.log(document.querySelector('.card-header'));
-// console.log(document.querySelector('div'));
-// document.querySelector('#header').style.color='red';
-// document.querySelector('#header').textContent='Deneme';
+//Multiple Elements
 
-// document.querySelector('#header').className='card mt-3 mb-3';
-// document.querySelector('#header').classList.add('active');
+//Class Name
+//document.getElementsByClassName();
+console.log("---------------");
 
+val=document.getElementsByClassName('card')[1];
+val=document.getElementsByClassName('card'); //(Seçme işlemi CSS gibi değil)
+console.log(val);
 
-// //Multiple Elements
+//HTML collection döndürür. Dizi metotlarıyla kullanabilmek için diziye çevirmek gerekir. 
+const arr = [...val];
+console.log("Array: ", arr);
+console.log("Array reverse: ", arr.reverse());
 
-// //Class Name
-// document.getElementsByClassName();
+console.log(val[0]);
 
-// let val;
+val[1].style.color='red';
+val[1].style.fontSize='25px';
+val[1].textContent='Deneme';
+console.log(val[1]);
 
-// val=document.getElementsByClassName('card');
-// val=document.getElementsByClassName('card')[1];
+for(let i=0;i<val.length; i++)
+{
+    console.log(val[i].style.color='red');
+    console.log(val[i].textContent='Deneme1');
+}
 
-// val=val[0]
+//Tag Name
+//document.getElementsByTagName();
+console.log("---------------");
 
-// val[1].style.color='red';
-// val[1].style.fontSize='25px';
-// val[1].textContent='Deneme';
+val=document.getElementById('header').getElementsByTagName('ul');
+val=document.getElementsByTagName('div');
+console.log(val);
 
-// for(let i=0;i<val.length; i++)
-// {
-//     console.log(val[i].style.color='red');
-//     console.log(val[i].textcontent='Deneme1');
-// }
+//Query selector un birden fazla eleman seçebileni, diziye çevrimeye gerek yok
+//document.querySelectorAll();
+console.log("---------------");
 
-// document.getElementsByTagName();
+val=document.querySelectorAll('div');
+console.log(val);
+//Node list döndürür. Dizi metotlarıyla kullanabilmek için diziye çevirmeye gerek yoktur. 
+val.forEach(function(item, index){
+   console.log(item);
+});
 
-// val=document.getElementsByTagName('li');
-// val=document.getElementById('header').getElementsByTagName('ul');
 
-// document.querySelectorAll();
+//Traversing to Dom
+console.log("---------------");
 
-// val=document.querySelectorAll('div');
+let list=document.querySelector('div');
 
-// val.forEach(function(item, index)
-// {
-//    console.log(item); 
-// });
+let val2=list;
+console.log(val2);
 
-// console.log(val);
+val2=list.childNodes; // Child ler alt alta yazıldıklarında her aşağı inme için childnodes a bir text ekler (Etiketler dışındaki değerleride alır)
+console.log(val2);
 
+val2=list.childNodes[0];
+val2=list.childNodes[0].nodeName;
+val2=list.childNodes[0].nodeType;
+val2=list.childNodes[1].nodeType; //1, 2 gibi node type değerleri döndürür
+console.log(val2);
 
-// //Traversing to Dom
-// let val;
+val2= list.children; //Sadece etiket değerlerini ele alır
+val2= list.children[0];
+val2= list.children[2];
+console.log(val2);
 
-// let list=document.querySelector('.list-group');
+val2= list.children[2].textContent='newe item';
+val2= list.children[2].children;
+console.log(val2);
 
-// val=list;
+val2= list.firstChild; //Etiket dışındaki elemanlarıda ele alır
+val2= list.firstElementChild; //Sadece etiket değerlerini ele alır
 
-// val=list.childNodes;
-// val=list.childNodes[0];
-// val=list.childNodes[0].nodeName;
-// val=list.childNodes[0].nodeType;
-// val=list.childNodes[1].nodeType;
+val2= list.lastChild;
+val2= list.lastElementChild;
 
-// val= list.children;
-// val= list.children[0];
-// val= list.children[2];
+val2= list.childElementCount;
+console.log(val2);
 
-// val= list.children[2].textContent='newe item';
-// val= list.children[2].children;
+val2= list.parentNode; //child in içinde bulunduğu parenti döndürür.
+console.log(val2);
 
-// val= list.firstChild;
-// val= list.firstElementChild;
+val2= list.parentElement; //Elemantin içinde bulunduğu parenti döndürür.
+console.log(val2);
 
-// val= list.lastChild;
-// val= list.lastElementChild;
+val2= list.children[0].nextSibling; //Sonraki aynı seviyedeki komşusu (Etiket olmayabilir)
+console.log(val2);
+val2= list.children[0].nextElementSibling; //Sonraki aynı seviyedeki komşusu (Etiket)
+console.log(val2);
 
-// val= list.childElementCount;
+val2= list.children[1].previousSibling; //Önceki aynı seviyedeki komşusu (Etiket olmayabilir)
+val2= list.children[1].previousElementSibling; //Önceki aynı seviyedeki komşusu (Etiket)
 
-// val= list.parentNode;
-// val= list.parentElement;
+console.log(val2);
 
-// val= list.children[0].nextSibling;
-// val= list.children[0].nextElementSibling;
+for(let i=0; i<list.childNodes.length; i++){
+   if(list.childNodes[i].nodeType==3)
+   console.log(list.childNodes[i]);
+}
 
-// val= list.children[1].previousSibling;
-// val= list.children[1].previousElementSibling;
 
-// console.log(val);
+//Creating Elements
+console.log("---------------");
 
-// for(let i=0; i<list.childNodes.length; i++)
-// {
-//    if(list.childNodes[i].nodeType==3)
-//    console.log(list.childNodes[i]);
-// }
 
-// //Removing Element
-// const taskList= document.querySelector('#task-list');
+//create element
+const li = document.createElement('li');
 
-// taskList.remove();
-// taskList.childNodes[7].remove();
-// taskList.children[3].remove();
-// taskList.removeChild(taskList.children[3]);
+//add class
+li.className='list-group-item list-group-item-secondary';
+li.id='id';
 
-// //Remoing Attribute
-// taskList.children[1].removeAttribute('class');
+//attribute
+li.setAttribute('title', 'new item');
+li.setAttribute('data-id', '5');
 
-// for(let i=0; i<taskList.children.length;i++)
-// {
-//    taskList.children[i].removeAttribute('class');
-// }
+//text node
+const text = document.createTextNode('Deneme');
+li.appendChild(text);
 
-// //Replacing Elements
-// const cardHeader= document.querySelector('.card-header');
 
-// //Create Element
-// const h2= document.createElement('h2');
-// h2.setAttribute('class', 'card-header');
-// h2.appendChild(document.createTextNode('Deneme'));
-// const parent=document.querySelector('.card');
-// parent.replaceChild(h2, cardHeader);
+const a = document.createElement('a');
+a.setAttribute('href', '#');
+a.className="delete-item float-right";
+a.innerHTML='icon';
 
-// console.log(cardHeader);
+//append a to li
+li.appendChild(a);
 
-// console.log(taskList);
+console.log(li);
+//append li to ul
+document.querySelector('ul').appendChild(li);
 
-// Classes
 
-// let val;
+//Replacing Elements
+const newHeader = document.createElement('h6');
+newHeader.id = "h6-id";
+newHeader.textContent = "Header";
 
-// link=taskList.children[0].children[0];
+const parent = document.querySelector("body");
+const oldHeader = document.querySelector("h1");
 
-// val=link.className;
-// val=link.classList;
-// val=link.classList[0];
-// val=link.classList[1];
+parent.replaceChild(newHeader, oldHeader);
 
-// link.classList.add('new');
-// link.classList.remove('new');
 
-// //Attribute
+//Removing Element
+const taskList= document.querySelector('#task-list');
 
-// val=link.getAttribute('data-id');
-// val=link.getAttribute('href');
-// val=link.setAttribute('href', 'https://google.com');
-// val=hasAttribute('data-val')
+taskList.remove();
+taskList.childNodes[7].remove();
+taskList.children[3].remove();
+taskList.removeChild(taskList.children[3]);
 
-// console.log(val);
+//Remoing Attribute
+taskList.children[1].removeAttribute('class');
 
+for(let i=0; i<taskList.children.length;i++){
+   taskList.children[i].removeAttribute('class');
+}
 
-// //Creating Elements
+//Attribute
+const val3 = link.getAttribute('data-id');
+val3 = link.getAttribute('href');
+val3 = link.setAttribute('href', 'https://google.com');
+val3 = hasAttribute('data-val')
 
-// //create element
+console.log(val3);
 
-// const li=document.createElement('li');
 
-// //add class
 
-// li.className='list-group-item list-group-item-secondary'
+//Events
 
-// //attribute
+//Event Listeners
+const btn=document.querySelector('#btnDeleteAll');
+const btn2=document.querySelector('#btnAddNewTask');
 
-// li.setAttribute('title', 'new item');
-// li.setAttribute('data-id', '5');
+btn.addEventListener('click', function(e){
+    e.preventDefault(); //Sayfanın yenilenmesi engellenir.
+    let val = e;
+    console.log(val);
 
-// // //text node
-
-// const  text= document.createTextNode('Deneme');
-// li.appendChild(text);
-
-// const a=document.createElement('a');
-// a.setAttribute('href', '#');
-// a.className="delete-item float-right";
-// a.innerHTML='icon';
-
-// //append a to li
-
-// li.appendChild(a);
-
-// //append li to ul
-
-// document.querySelector('#task-list').appendChild(li);
-
-
-// console.log(li);
-
-
-
-
-// //Events
-
-// //Event Listeners
-
-// const btn=document.querySelector('#btnDeleteAll');
-// const btn2=document.querySelector('#btnAddNewTask');
-
-// btn.addEventListener('click', function(e){
-//    let val;
-//    val=e;
-
-//    val=e.target;
-//    val=e.target.id;
-//    val=e.target.classList;
-//    val=e.type;
+    val=e.target;
+    val=e.target.id;
+    val=e.target.classList;
+    val=e.type;
    
-//    console.log(val);
-   
+    console.log(val);
+});
+
+btn.addEventListener('click', btnClick);
+btn.addEventListener('click', btnClick2);
+btn2.addEventListener('click', btnClick);
+
+function btnClick(){
+   console.log('Deneme');
+}
+
+function btnClick2(){
+   console.log('Deneme 2');
+}
 
 
-//    e.preventDefault();
-// });
+//Mause Events
+const btn=document.querySelector('#btnDeleteAll');
+const ul=document.querySelector('#task-list');
 
-// btn.addEventListener('click', btnClick);
-// btn.addEventListener('click', btnClick2);
-// btn2.addEventListener('click', btnClick);
+//click
+btn.addEventListener('click', eventHandler);
+ul.addEventListener('click', eventHandler);
 
-// function btnClick()
-// {
-//    console.log('Deneme');
-// }
+//doubleclick
+btn.addEventListener('dblclick', eventHandler);
 
-// function btnClick2()
-// {
-//    console.log('Deneme 2');
-// }
+//mousedown
+btn.addEventListener('mousedown', eventHandler);
 
+//mouseup
+btn.addEventListener('mouseup', eventHandler);
 
-// //Mause Events
-// const btn=document.querySelector('#btnDeleteAll');
-// const ul=document.querySelector('#task-list');
+//mouseenter
+btn.addEventListener('mouseenter', eventHandler);
 
-// //click
-// btn.addEventListener('click', 'eventHandler');
-// ul.addEventListener('click', 'eventHandler');
+//mousedown
+btn.addEventListener('mousedown', eventHandler);
 
-// //doubleclick
-// btn.addEventListener('dblclick', 'eventHandler');
+//mouseleave
+btn.addEventListener('mouseleave', eventHandler);
 
-// //mousedown
-// btn.addEventListener('mousedown', 'eventHandler');
+//mouseover
+btn.addEventListener('mouseover', eventHandler);
 
-// //mouseup
-// btn.addEventListener('mouseup', 'eventHandler');
+//mouseout
+btn.addEventListener('mouseout', eventHandler);
 
-// //mouseenter
-// btn.addEventListener('mouseenter', 'eventHandler');
+//mosuemove
+const h5= document.querySelector('h5');
+h5.addEventListener('mousemove', eventHandler);
 
-// //mousedown
-// btn.addEventListener('mousedown', 'eventHandler');
-
-// //mouseleave
-// btn.addEventListener('mouseleave', 'eventHandler');
-
-// //mouseover
-// btn.addEventListener('mouseover', 'eventHandler');
-
-// //mouseout
-// btn.addEventListener('mouseout', 'eventHandler');
-
-// //mosuemove
-// const h5= document.querySelector('h5');
-// h5.addEventListener('mousemove', eventHandler);
+function eventHandler(event){
+    console.log(`event type: ${event.type}`);
+    h5.textContent=`Mosue X: ${event.offSetX} Mouse Y: ${event.offSety}`;
+}
 
 
-// function eventHandler(event)
-// {
-//    console.log(`event type: ${event.type}`);
+//Keybord Events
+const input=document.querySelector('#xttaskName');
+const form=document.querySelector('form');
+const select=document.querySelector('#select');
 
-//    h5.textContent=`Mosue X: ${event.offSetX} Mouse Y: ${event.offSety}`;
-// }
+input.addEventListener('keydown', eventHandler);
+input.addEventListener('keyup', eventHandler);
+input.addEventListener('keypress', eventHandler);
+input.addEventListener('focus', eventHandler);
+input.addEventListener('blur', eventHandler);
+input.addEventListener('cut', eventHandler);
+input.addEventListener('paste', eventHandler);
+input.addEventListener('select', eventHandler);
+form.addEventListener('submit', eventHandler);
+select.addEventListener('change', eventHandler);
+
+function eventHandler(event){
+   console.log(`event type: ${event.type}`);
+
+   console.log(`key code: ${event.keyCode}`);
+   console.log(`key value: ${event.target.value}`);
+   event.target.style.backgroundColor='yellow';
+
+   event.preventDefault();
+}
+
+//Event Bubbling
+//Eğer bir tag daki event onun parent ındada varsa parent ındaki eventda tetiklenir.
+
+//Event delegation: Aynı seviyede ve aynı class a sahip başka taglar varsa event sadece ilgili tag için çalışır. 
+
+//Bir parent ın event ı onun child larındada çalışır
+
+const form=document.querySelector('form');
+const cardBody=document.querySelector('.cardBody');
+const card=document.querySelector('.card');
+const container=document.querySelector('.container');
+
+form.addEventListener('click', function(e){
+   console.log('form');
+   e.stopPropagation();
+});
+
+cardBody.addEventListener('click', function(e){
+   console.log('card Body');
+   e.stopPropagation();
+});
+
+card.addEventListener('click', function(e){
+   console.log('card');
+   e.stopPropagation();
+});
+
+container.addEventListener('click', function(e){
+   console.log('container');
+   e.stopPropagation();
+});
 
 
-// //Keybord Events
+//Event Capturing
+form.addEventListener('click', function(e){
+   console.log('form');
+   e.stopPropagation();
+}, true);
 
-// const input=document.querySelector('#xttaskName');
-// const form=document.querySelector('form');
-// const select=document.querySelector('#select');
+cardBody.addEventListener('click', function(e){
+   console.log('card Body');
+   e.stopPropagation();
+}, true);
 
-// input.addEventListener('keydown', eventHandler);
-// input.addEventListener('keyup', eventHandler);
-// input.addEventListener('keypress', eventHandler);
-// input.addEventListener('focus', eventHandler);
-// input.addEventListener('blur', eventHandler);
-// input.addEventListener('cut', eventHandler);
-// input.addEventListener('paste', eventHandler);
-// input.addEventListener('select', eventHandler);
-// form.addEventListener('submit', eventHandler);
-// select.addEventListener('change', eventHandler);
+card.addEventListener('click', function(e){
+   console.log('card');
+   e.stopPropagation();
+}, true);
 
-// function eventHandler(event)
-// {
-//    console.log(`event type: ${event.type}`);
+container.addEventListener('click', function(e){
+   console.log('container');
+   e.stopPropagation();
+}, true);
 
-//    console.log(`key code: ${event.keyCode}`);
-//    console.log(`key value: ${event.target.value}`);
-//    event.target.style.backgroundColor='yellow';
+const deleteItems= documnet.querySelector('.fa-times');
 
-//    event.preventDefault();
-// }
+deleteItems.forEach(function(item) {
+   item.addEventListener('click', function(e){
+      console.log(e.targer);
+   })
+});
 
-// //Event Bubbling
+const ul= documnet.querySelector('ul');
 
-// const form=document.querySelector('form');
-// const cardBody=document.querySelector('.cardBody');
-// const card=document.querySelector('.card');
-// const container=document.querySelector('.container');
-
-// form.addEventListener('click', function(e){
-//    console.log('form');
-//    e.stopPropagation();
-// });
-
-// cardBody.addEventListener('click', function(e){
-//    console.log('card Body');
-//    e.stopPropagation();
-// });
-
-// card.addEventListener('click', function(e){
-//    console.log('card');
-//    e.stopPropagation();
-// });
-
-// container.addEventListener('click', function(e){
-//    console.log('container');
-//    e.stopPropagation();
-// });
-
-// // //Event Capturing
-
-// form.addEventListener('click', function(e){
-//    console.log('form');
-//    e.stopPropagation();
-// }, true);
-
-// cardBody.addEventListener('click', function(e){
-//    console.log('card Body');
-//    e.stopPropagation();
-// }, true);
-
-// card.addEventListener('click', function(e){
-//    console.log('card');
-//    e.stopPropagation();
-// }, true);
-
-// container.addEventListener('click', function(e){
-//    console.log('container');
-//    e.stopPropagation();
-// }, true);
-
-// const deleteItems= documnet.querySelector('.fa-times');
-
-// deleteItems.forEach(function(item) {
-//    item.addEventListener('click', function(e){
-//       console.log(e.targer);
-//    })
-   
-// });
-
-// const ul= documnet.querySelector('ul');
-
-// ul.addEventListener('click', function(e){
-//    if(e.targer.className='fas fa-times')
-//    e.targer.parentElement.parentElement.remov();
-//    e.stopPropagation();
-// });
+ul.addEventListener('click', function(e){
+   if(e.targer.className='fas fa-times')
+   e.targer.parentElement.parentElement.remov();
+   e.stopPropagation();
+});
 
 
 
-// //Tarayıcıda bilgi saklama
-// //Local Storage
-// let val;
+//Tarayıcıda bilgi saklama
 
-// //set item
-// const firstName=localStorage.setItem('firstName', 'Deneme');
-// const lastName=localStorage.setItem('lastName', 'Deneme1');
-// let hobies=['sinema', 'araba', 'gezmek']
+//Local Storage
+//set item
+const firstName=localStorage.setItem('firstName', 'Deneme');
+const lastName=localStorage.setItem('lastName', 'Deneme1');
+let hobies=['sinema', 'araba', 'gezmek']
 
-// //get item
-// val=localStorage.getItem('firstName');
-// val=localStorage.getItem('lastName');
+//get item
+let val=localStorage.getItem('firstName');
+val=localStorage.getItem('lastName');
 
-// //remove
-// val=localStorage.removeItem('firstName');
-// val=localStorage.removeItem('lastName');
+//remove
+val=localStorage.removeItem('firstName');
+val=localStorage.removeItem('lastName');
 
-// //clear
-// localStorage.clear();
+//clear
+localStorage.clear();
 
-// //set array to storage
-// localStorage.setItem('hobies', JSON.stringify(hobies));
+//set array to storage
+localStorage.setItem('hobies', JSON.stringify(hobies));
 
-// val=JSON.parse(localStorage.getItem('hobies'));
+val = JSON.parse(localStorage.getItem('hobies'));
+
+console.log(val);
+console.log(localStorage);
 
 
-// console.log(val);
-// console.log(localStorage);
-
-// //Session Storage
-// const city=sessionStorage.setItem('city', 'Deneme2');
-// const country=sessionStorage.setItem('country', 'Deneme3');
-// console.log(sessionStorage);
+//Session Storage
+const city = sessionStorage.setItem('city', 'Deneme2');
+const country = sessionStorage.setItem('country', 'Deneme3');
+console.log(sessionStorage);
